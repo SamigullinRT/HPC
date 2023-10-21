@@ -1,4 +1,4 @@
-![image](https://github.com/SamigullinRT/HPC/assets/144899741/941c5cee-c7fe-4406-b676-807fc4ad138a)![image](https://github.com/SamigullinRT/HPC/assets/144899741/e432871e-a032-44c0-8418-2dc4b0a2e578)## Самигуллин Равиль гр6133
+## Самигуллин Равиль гр6133
 
 Для реализации на c++ я использовал инструкцию на [geekforgeeks](https://www.geeksforgeeks.org/how-to-run-cuda-c-c-on-jupyter-notebook-in-google-colaboratory/).
 
