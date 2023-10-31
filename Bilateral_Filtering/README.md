@@ -10,9 +10,9 @@
 cupy работало даже медленнее чем на cpu я прождал два часа, и понял что это уже слишком
 numpy тоже самое что и cupy, работает больше двух часов результата даже с окном в 9 пикселей нет,
 
-![Текст с описанием картинки](/Bilateral Filtering/pictures/dwsample-bmp-1920.bmp)
+![Текст с описанием картинки](/Bilateral_Filtering/pictures/dwsample-bmp-1920.bmp)
 
-<image src="Bilateral Filtering/pictures/dwsample-bmp-1920.bmp" alt="Исходное изображение">
+<image src="Bilateral_Filtering/pictures/dwsample-bmp-1920.bmp" alt="Исходное изображение">
 
 cuda, это библиотека обладает несколькими модулями для распараллеливания, я использовал @vectorize, @cuda
 при этом там так же можно использовать разделение по блокам и нитям как в c++, вот что я сделал
