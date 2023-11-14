@@ -6,8 +6,39 @@
 Реализация параллели:
 
 ```
-const int i = threadIdx.x + blockDim.x * blockIdx.x; 
-const int j = threadIdx.y + blockDim.y * blockIdx.y;
+calculate_median_GPU = SourceModule("""
+    texture<unsigned int, 2, cudaReadModeElementType> tex;
+
+    __global__ void median_gpu(unsigned int * __restrict__ d_result, const int M, const int N)
+    {
+        const int i = threadIdx.x + blockDim.x * blockIdx.x;
+        const int j = threadIdx.y + blockDim.y * blockIdx.y;
+
+        if ((i >= 2) && (i < M-1) && (j >= 2) && (j < N-1)) {
+            float t[9];
+            int index = 0;
+
+            for (int di = -1; di <= 1; di++) {
+                for (int dj = -1; dj <= 1; dj++) {
+                    t[index] = tex2D(tex, j+dj, i+di);
+                    index++;
+                }
+            }
+
+            for (int k = 0; k < 8; k++) {
+                for (int l = 0; l < 8-k; l++) {
+                    if (t[l] > t[l+1]) {
+                        float temp = t[l];
+                        t[l] = t[l+1];
+                        t[l+1] = temp;
+                    }
+                }
+            }
+
+            d_result[i * N + j] = t[4];
+        }
+    }
+    """)
 ```
 ```
 tex = calculate_median_GPU.get_texref("tex")
