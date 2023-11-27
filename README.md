@@ -4,4 +4,9 @@
 
 Лабораторные находятся в папках, описания в `README.md`.
 
+ЛР 1 - [MATMUL](HPC/lab_1(Matmul))
+ЛР 2 - [VECTOR_SUM](HPC/lab_2(vector_sum))
+ЛР 3 - [Bilateral_Filtering](HPC/Bilateral_Filtering)
+ЛР 4 - [salt_and_paper](HPC/salt_and_paper)
+
 О себе: перешел с Лазерной техники на ПМИ, не судите строго 🙂.
